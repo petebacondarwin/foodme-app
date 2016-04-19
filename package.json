@@ -3,8 +3,26 @@
   "version": "1.0.0",
   "description": "A demo app for an Angular workshop",
   "scripts": {
+    "start": "lite-server",
+    "build": "babel app -o bundle.js --source-maps",
+    "watch": "watchy -w app -- npm run build"
   },
   "author": "Pete Bacon Darwin",
   "license": "MIT",
-  "repository": "https://github.com/petebacondarwin/foodme-app"
+  "repository": "https://github.com/petebacondarwin/foodme-app",
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-animate": "^1.5.5",
+    "angular-aria": "^1.5.5",
+    "angular-material": "^1.0.7",
+    "angular-message-format": "^1.5.5",
+    "angular-messages": "^1.5.5",
+    "angular-sanitize": "^1.5.5",
+    "angular-ui-router": "^0.2.18"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.7.5",
+    "lite-server": "^2.2.0",
+    "watchy": "^0.6.6"
+  }
 }
