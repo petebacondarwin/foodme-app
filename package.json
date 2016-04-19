@@ -1,0 +1,10 @@
+{
+  "name": "foodme",
+  "version": "1.0.0",
+  "description": "A demo app for an Angular workshop",
+  "scripts": {
+  },
+  "author": "Pete Bacon Darwin",
+  "license": "MIT",
+  "repository": "https://github.com/petebacondarwin/foodme-app"
+}
