@@ -4,7 +4,8 @@
   "description": "A demo app for an Angular workshop",
   "scripts": {
     "start": "lite-server",
-    "build": "babel src -o bundle.js --source-maps",
+    "prebuild": "mkdir -p dist",
+    "build": "babel src -o dist/app.js --source-maps",
     "watch": "watchy -w src -- npm run build"
   },
   "author": "Pete Bacon Darwin",

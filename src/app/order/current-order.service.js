@@ -13,11 +13,14 @@ function CurrentOrder(localStorage, alert) {
 
 CurrentOrder.prototype.addToOrder = function(restaurant, item) {
   if (!this.restaurant) {
-    this.restaurant = restaurant.id;
+    this.restaurant = {
+      id: restaurant.id,
+      name: restaurant.name
+    };
   }
 
-  if (this.restaurant !== restaurant.id) {
-    alert('You cannot mix items from different restaurant - clear the shopping cart first.');
+  if (this.restaurant.id !== restaurant.id) {
+    alert('You cannot mix items from different restaurants - clear the shopping cart first.');
     return;
   }
 
