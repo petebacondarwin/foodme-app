@@ -116,27 +116,27 @@
 }
 
 
-/* Shopping Cart */
+/* Order */
 
-.fm-cart li {
+.fm-order li {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
 
-.fm-cart .fm-restaurant {
+.fm-order .fm-restaurant {
   font-size: 18px;
 }
 
-.fm-cart .icon-remove-sign {
+.fm-order .icon-remove-sign {
   visibility: hidden;
 }
 
-.fm-cart li:hover .icon-remove-sign {
+.fm-order li:hover .icon-remove-sign {
   visibility: visible;
 }
 
-.fm-cart .fm-total {
+.fm-order .fm-total {
   padding-left: 20px;
   padding-top: 5px;
   font-weight: bold;
@@ -144,6 +144,7 @@
 
 
 /* Animations */
+
 .navbar-nav > li, .navbar-nav > li > a {
   transition: 0.5s ease-out all;
 }

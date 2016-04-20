@@ -1,0 +1,20 @@
+<fm-panel class="fm-order">
+  <fm-heading>Your order</fm-heading>
+  <fm-content>
+    <div class="fm-restaurant">{{ $ctrl.getRestaurant().name }}</div>
+
+    <ul class="list-unstyled">
+      <li ng-repeat="orderItem in $ctrl.order.items">
+        <a ng-click="$ctrl.order.removeFromOrder(orderItem)">
+          <i class="glyphicon glyphicon-remove"></i>
+        </a>
+        {{orderItem.amount}} &times; {{ orderItem.name }}
+      </li>
+    </ul>
+
+    <div class="pull-right">
+      <a href class="btn btn-primary">Checkout</a>
+    </div>
+    <div class="fm-total">Total: {{$ctrl.order.total | currency}}</div>
+  </fm-content>
+</fm-panel>

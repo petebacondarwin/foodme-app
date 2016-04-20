@@ -1,0 +1,14 @@
+<fm-panel class="fm-menu-list">
+  <fm-heading>Menu</fm-heading>
+  <fm-content>
+    <ul>
+      <li ng-repeat="menuItem in $ctrl.restaurant.menuItems">
+        <span>{{menuItem.name}}</span>
+        <span>{{menuItem.price | currency}}</span>
+        <a href>
+          <i class="glyphicon glyphicon-plus" ng-click="$ctrl.onChooseItem({item: menuItem})"></i>
+        </a>
+      </li>
+    </ul>
+  </fm-content>
+</fm-panel>

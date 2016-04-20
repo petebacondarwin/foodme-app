@@ -1,1 +1,5 @@
-angular.module('common/alert', []);
+angular.module('common/alert', [])
+
+.factory('alert', function() {
+  return window.alert;
+});

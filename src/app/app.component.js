@@ -1,4 +1,11 @@
-angular.module('app/app', [])
+angular.module('app/app', [
+  'app/toolbar',
+  'app/restaurants/restaurant-list',
+  'app/restaurants/restaurant-detail',
+  'app/info/how-it-works',
+  'app/info/who-we-are',
+  'app/info/help'
+])
 
 .config(function($stateProvider) {
   $stateProvider

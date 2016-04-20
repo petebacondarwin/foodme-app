@@ -1,11 +1,11 @@
-angular.module('app', [
+angular.module('foodme', [
+  'ngAnimate',
   'ngSanitize',
+  'ngMessages',
   'ngMessageFormat',
   'ui.router',
   'common',
-  'app/app',
-  'app/info',
-  'app/restaurants'
+  'app/app'
 ])
 
 .config(function($locationProvider) {

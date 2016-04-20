@@ -1,3 +1,3 @@
-angular.module('local-storage', [])
+angular.module('common/local-storage', [])
 
 .value('localStorage', window.localStorage)

@@ -1,6 +1,8 @@
 angular.module('app/restaurants/restaurant-list', [
   'app/restaurants/restaurant-service',
-  'app/restaurants/restaurant-filters'
+  'app/restaurants/restaurant-filters',
+  'app/customer/customer-widget',
+  'common/sort-header'
 ])
 
 .component('fmRestaurantList', {

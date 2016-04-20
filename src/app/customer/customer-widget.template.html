@@ -1,0 +1,13 @@
+<div class="well">
+  <legend>Customer Info</legend>
+  <fm-user-form
+      user="$ctrl.user"
+      on-save="$ctrl.saveUser(user)"
+      ng-if="$ctrl.isEditing">
+  </fm-user-form>
+  <fm-delivery-info
+      user="$ctrl.user"
+      on-edit-user="$ctrl.editUser()"
+      ng-if="!$ctrl.isEditing">
+  </fm-delivery-info>
+</div>

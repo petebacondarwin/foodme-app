@@ -1,7 +1,8 @@
 <div class="col-md-3">
-  <fm-deliver-to deliver-to="app.user"></fm-deliver-to>
   <fm-restaurant-filters filters="$ctrl.filters" filters-change="$ctrl.filterBy(filter, value)"></fm-restaurant-filters>
+  <fm-customer-widget></fm-customer-widget>
 </div>
+
 <div class="col-md-9">
   <div class="alert alert-info">
     {{ $ctrl.filteredRestaurants.length, plural,
@@ -14,9 +15,9 @@
   <table class="table table-striped">
     <thead>
     <tr>
-      <th><a href ng-click="$ctrl.sortBy('name')">Name <span ng-class="$ctrl.getSortClass('name')"></span></a></th>
-      <th><a href ng-click="$ctrl.sortBy('price')">Price <span ng-class="$ctrl.getSortClass('price')"></span></a></th>
-      <th><a href ng-click="$ctrl.sortBy('rating')">Rating <span ng-class="$ctrl.getSortClass('rating')"></span></a></th>
+      <th><fm-sort-header sort="$ctrl.sortProperty=='name'" descending="$ctrl.sortDirection" on-change="$ctrl.sortBy('name')">Name</fm-sortable-header></th>
+      <th><fm-sort-header sort="$ctrl.sortProperty=='name'" descending="$ctrl.sortDirection" on-change="$ctrl.sortBy('price')">Price</fm-sortable-header></th>
+      <th><fm-sort-header sort="$ctrl.sortProperty=='rating'" descending="$ctrl.sortDirection" on-change="$ctrl.sortBy('rating')">Rating</fm-sortable-header></th>
     </tr>
     </thead>
     <tbody>

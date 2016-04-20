@@ -1,46 +1,28 @@
-<div layout="row">
-  <img ng-src="/images/restaurants/{{$ctrl.restaurant.id}}.jpg" class="img-rounded">
-  <div layout="column">
+<div class="row fm-restaurant">
+  <div class="col-md-2">
+    <img ng-src="assets/images/restaurants/{{$ctrl.restaurant.id}}.jpg" class="img-rounded">
+  </div>
+  <div class="col-md-10">
     <h3>{{$ctrl.restaurant.name}}</h3>
-    <div>{{$ctrl.restaurant.address}}</div>
-    <div ng-bind-html="$ctrl.restaurant.rating | rating : 'star'"></div>
-    <div ng-bind-html="$ctrl.restaurant.price | rating : 'gbp'"></div>
-    <div>{{$ctrl.restaurant.description}}</div>
-  </div>
 
-  <div md-whiteframe="2">
-    <div>Menu</div>
-    <ul>
-      <li ng-repeat="menuItem in $ctrl.restaurant.menuItems">
-        <a href>
-          <span>{{menuItem.name}}</span>
-          <span>{{menuItem.price | currency}}</span>
-          <i class="glyphicon glyphicon-plus" ng-click="shoppingCart.add(menuItem, $ctrl.restaurant)"></i>
-        </a>
-      </li>
-    </ul>
-  </div>
-
-  <fm-deliver-to deliver-to="app.user"></fm-deliver-to>
-
-<!--<div >
-  <div class="fm-heading">Your order</div>
-  <div class="fm-content">
-    <div class="fm-restaurant">{{ shoppingCart.restaurant().name }}</div>
-
-    <ul class="list-unstyled">
-      <li ng-repeat="cartItem in shoppingCart.items()">
-        <a ng-click="shoppingCart.remove(cartItem)">
-          <i class="glyphicon glyphicon-remove"></i>
-        </a>
-        {{cartItem.amount}} &times; {{ cartItem.name }}
-      </li>
-    </ul>
-
-    <div class="pull-right">
-      <a href class="btn btn-primary">Checkout</a>
+    <div class="col-md-2">
+      <div>{{$ctrl.restaurant.address}}</div>
+      <div ng-bind-html="$ctrl.restaurant.rating | rating : '*'"></div>
+      <div ng-bind-html="$ctrl.restaurant.price | rating : '£'"></div>
     </div>
-    <div class="fm-total">Total: {{shoppingCart.total() | currency}}</div>
+    <div class="col-md-4">{{$ctrl.restaurant.description}}</div>
+  </div>
+</div>
 
-  </div>-->
+<div class="row">
+  <div class="col-md-8">
+    <fm-menu
+        restaurant="$ctrl.restaurant"
+        on-choose-item="$ctrl.addToOrder(item)">
+    </fm-menu>
+  </div>
+  <div class="col-md-4">
+    <fm-order-widget></fm-order-widget>
+    <fm-customer-widget></fm-customer-widget>
+  </div>
 </div>
