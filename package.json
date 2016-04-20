@@ -4,8 +4,8 @@
   "description": "A demo app for an Angular workshop",
   "scripts": {
     "start": "lite-server",
-    "build": "babel app -o bundle.js --source-maps",
-    "watch": "watchy -w app -- npm run build"
+    "build": "babel src -o bundle.js --source-maps",
+    "watch": "watchy -w src -- npm run build"
   },
   "author": "Pete Bacon Darwin",
   "license": "MIT",

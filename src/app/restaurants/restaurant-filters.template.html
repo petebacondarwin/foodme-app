@@ -1,0 +1,11 @@
+<form role="form" class="well">
+  <legend>Filter Restaurants</legend>
+  <fm-rating label="Price (no more than)"
+             rating="$ctrl.price"
+             glyph="gbp"
+             on-select="$ctrl.filterBy('price', value)"></fm-rating>
+  <fm-rating label="Rating (at least)"
+             rating="$ctrl.rating"
+             glyph="star"
+             on-select="$ctrl.filterBy('rating', value)"></fm-rating>
+</form>

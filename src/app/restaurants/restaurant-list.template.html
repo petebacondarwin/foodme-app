@@ -1,0 +1,42 @@
+<div class="col-md-3">
+  <fm-deliver-to deliver-to="app.user"></fm-deliver-to>
+  <fm-restaurant-filters filters="$ctrl.filters" filters-change="$ctrl.filterBy(filter, value)"></fm-restaurant-filters>
+</div>
+<div class="col-md-9">
+  <div class="alert alert-info">
+    {{ $ctrl.filteredRestaurants.length, plural,
+      =0 {No restaurants found!}
+      =1 {Only one restaurant found!}
+      other {# restaurants found.}
+    }}
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th><a href ng-click="$ctrl.sortBy('name')">Name <span ng-class="$ctrl.getSortClass('name')"></span></a></th>
+      <th><a href ng-click="$ctrl.sortBy('price')">Price <span ng-class="$ctrl.getSortClass('price')"></span></a></th>
+      <th><a href ng-click="$ctrl.sortBy('rating')">Rating <span ng-class="$ctrl.getSortClass('rating')"></span></a></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="restaurant in $ctrl.filteredRestaurants | orderBy : $ctrl.sortProperty : $ctrl.sortDirection">
+      <td class="description">
+        <div class="media">
+          <a class="pull-left" ui-sref="restaurant-detail({id: restaurant.id})">
+            <img class="img-rounded" ng-src="assets/images/restaurants/{{restaurant.id}}.jpg">
+          </a>
+          <div class="media-body">
+            <h4 class="media-heading">
+              <a ui-sref="restaurant-detail({id: restaurant.id})">{{restaurant.name}}</a>
+            </h4>
+            <p>{{restaurant.description}}</p>
+          </div>
+        </div>
+      </td>
+      <td class="price">{{ restaurant.price | rating : '£' }}</td>
+      <td class="rating">{{ restaurant.rating | rating : '*' }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
