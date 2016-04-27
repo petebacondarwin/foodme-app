@@ -60,7 +60,7 @@ CurrentOrder.prototype.removeFromOrder = function(item) {
 CurrentOrder.prototype._loadOrder = function() {
   var order = JSON.parse(this.localStorage[this._key] || '{}');
   this.restaurant = order.restaurant;
-  this.items = order.items;
+  this.items = order.items || [];
   this._computeTotal();
 };
 
